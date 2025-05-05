@@ -1,0 +1,44 @@
+📌 📋 Roadmap de Desenvolvimento (Organizado)
+Dia 1-2:
+
+Criar projeto Django
+
+Criar app users, core
+
+Configurar Docker + PostgreSQL
+
+Configurar JWT
+
+Dia 3-4:
+
+Criar models: User, Tema, Devocional, Versículo, LogEnvio
+
+Criar serializers e endpoints CRUD
+
+Dia 5-6:
+
+Configurar painel admin
+
+Testar cadastro via API
+
+Dia 7-8:
+
+Integrar Resend API (testar envio manual via script)
+
+Dia 9-10:
+
+Criar management command ou script programado pra envio diário
+
+Dia 11:
+
+(Opcional) Integrar Twilio ou Z-API pro WhatsApp
+
+Dia 12:
+
+Criar dashboard admin com métricas básicas
+
+Dia 13-14:
+
+Testes finais
+
+Deploy (Render, Railway ou DigitalOcean)

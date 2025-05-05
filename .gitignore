@@ -1,0 +1,45 @@
+# Arquivos do ambiente virtual
+venv/
+__pycache__/
+*.pyc
+
+# Arquivos de banco de dados do Django
+db.sqlite3
+*.log
+
+# Arquivos de configuração do sistema
+*.env
+*.DS_Store
+*.sqlite3
+
+# Pastas de migrações do Django
+*/migrations/*
+
+# Arquivos do editor (Visual Studio Code, por exemplo)
+.vscode/
+
+# Arquivos de backup de editores
+*~ 
+*.bak
+
+# Arquivos de cache
+*.cache
+*.pyo
+*.pyd
+
+# Arquivos do sistema
+*.swp
+
+# Diretórios do Django
+media/
+staticfiles/
+
+# Arquivos de segurança
+*.pem
+*.key
+
+# Arquivos do pytest
+.cache/
+
+# Arquivos de documentação
+*.md
