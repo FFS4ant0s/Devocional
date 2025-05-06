@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -75,14 +77,14 @@ WSGI_APPLICATION = 'devocional.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbname',
-        'USER': 'user',
-        'PASSWORD': 'password',
-        'HOST': 'db',
-        'PORT': '5432',
+        'NAME': 'devocional_diario',  # Substitua por um nome de banco de dados válido
+        'USER': 'postgres',  # Usando o usuário padrão do PostgreSQL
+        'PASSWORD': 'Nando@123',  # Senha configurada para o PostgreSQL
+        'HOST': 'db',  # Nome do container do PostgreSQL
+        'PORT': '5432',  # Porta padrão do PostgreSQL
     }
 }
 
@@ -133,3 +135,6 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
+
+# Define que o modelo de usuário padrão será o User que criamos
+AUTH_USER_MODEL = 'users.User'

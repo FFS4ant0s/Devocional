@@ -4,9 +4,9 @@ services:
   db:
     image: postgres:latest
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: dbname
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Nando@123
+      POSTGRES_DB: devocional_diario # Nome do banco de dados
     ports:
       - "5432:5432"
     volumes:
@@ -15,7 +15,7 @@ services:
   web:
     build: .
     command: >
-      sh -c "./wait-for-it.sh db:5432 -- python /app/devocional/manage.py runserver 0.0.0.0:8000"
+      sh -c "./wait-for-it.sh db:5432 -- python /app/devocional/manage.py migrate && python /app/devocional/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:
