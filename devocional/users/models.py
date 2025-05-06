@@ -1,18 +1,22 @@
 # users/models.py
+# flake8: noqa: E501
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    # Aqui você pode adicionar campos personalizados, se necessário
+    usuario = models.CharField(max_length=50)
     pass
 
 
 class Tema(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=255)
+
+    # E-mail, já incluído no AbstractUser, mas pode ser personalizado
+    email = models.EmailField(unique=True)
 
     def __str__(self):
-        return self.nome
+        return f"{self.nome} ({self.email})"
 
 
 class Devocional(models.Model):
@@ -37,4 +41,4 @@ class LogEnvio(models.Model):
     status = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"Log de envio para {self.usuario} em {self.data_envio}"
+        return f"Log de envio para {self.usuario.nome} ({self.usuario.email}) em {self.data_envio}"
