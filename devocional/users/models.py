@@ -36,7 +36,8 @@ class Versiculo(models.Model):
 
 
 class LogEnvio(models.Model):
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='logenvios_users')
     data_envio = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=100)
 

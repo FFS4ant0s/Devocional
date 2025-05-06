@@ -62,7 +62,8 @@ class LogEnvio(models.Model):
     # Usuário para quem o devocional foi enviado
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,       # Usa o modelo de usuário configurado
-        on_delete=models.CASCADE        # Se o usuário for deletado, deleta os logs
+        on_delete=models.CASCADE,       # Se o usuário for deletado, deleta os logs
+        related_name='logenvios_core'
     )
     # Devocional enviado
     devocional = models.ForeignKey(
